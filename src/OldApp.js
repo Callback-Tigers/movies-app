@@ -19,7 +19,7 @@ let moviesData = [
   ]
   
 
-  const App = () => {
+  const OldApp = () => {
      
     const [selectedMovie, setSelectedMovie] = useState("")
 
@@ -27,15 +27,38 @@ let moviesData = [
        return(
         <div className="App">
 
-             <MovieNameDisplay />
-            
-             <MovieDetailsDisplay />
+            <div className="movies-name">
+                  {
+                        moviesData.map((movie) => {
+                            return(
+                              <p onClick={()=>setSelectedMovie(movie)}>{movie.title}</p>
+                            )
+                        })
+                  }
+            </div>
+            <div className="movie-details">
+                  {
+                    selectedMovie!="" ?  (<div>
+                        <h1>{selectedMovie.title}</h1>
+                        <p>{selectedMovie.releaseYear}</p>
+                        <p>{selectedMovie.genre}</p>
+                        <img src={selectedMovie.poster} alt="movie-poster" />
+
+                    </div>)
+
+                    :
+                    ("")
+                        
+                    
+                  }
+
+            </div>
 
         </div>
        )
   }
 
-    export default App;
+    export default OldApp;
 
 
     // let a = 2 

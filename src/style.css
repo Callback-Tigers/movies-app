@@ -1,0 +1,11 @@
+.App{
+     display: flex;
+
+}
+.App .movies-name{
+    width: 30%
+}
+
+.App movie-details{
+    width: 70%
+}
